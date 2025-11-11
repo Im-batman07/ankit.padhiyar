@@ -518,6 +518,69 @@
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
 
+        /* Contact box (new) */
+        .contact-box {
+            display: inline-flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            background: #0f1720; /* dark background */
+            color: #f8fafc;      /* light text */
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 0.35rem 0.65rem;
+            border-radius: 8px;
+            background: transparent;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .contact-item .label {
+            font-size: 0.75rem;
+            color: rgba(248,250,252,0.7);
+        }
+
+        .contact-item .value {
+            font-size: 1rem;
+            color: #f8fafc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(2,6,23,0.7);
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* small screens adjustments for contact box */
+        @media (max-width: 480px) {
+            .contact-box {
+                flex-direction: column;
+                gap: 0.6rem;
+                padding: 0.75rem;
+            }
+
+            .contact-item {
+                align-items: center;
+            }
+
+            .contact-item .label { text-align: center; }
+            .contact-item .value { text-align: center; }
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -676,7 +739,7 @@
             <p class="subtitle">Software Developer</p>
             <div class="hero-about">
                 <p>
-                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
+                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life throug[...]
                 </p>
                 <p>
                     My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I believe in writing clean, efficient, and maintainable code that makes a difference.
@@ -685,7 +748,7 @@
             <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
         <div class="hero-right">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%231a1a2e' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='120' fill='%2300ffff'%3EAP%3C/text%3E%3C/svg%3E" alt="Ankit Padhiyar" class="profile-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%231a1a2e' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-[...]
         </div>
     </section>
 
@@ -693,13 +756,13 @@
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
+                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to[...]
             </p>
             <p style="margin-top: 1.5rem;">
-                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and best practices in software development. I believe in writing clean, efficient, and maintainable code that makes a difference.
+                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and bes[...]
             </p>
             <p style="margin-top: 1.5rem;">
-                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail. I'm always excited to take on new challenges and collaborate on interesting projects.
+                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail.[...]
             </p>
         </div>
     </section>
@@ -830,8 +893,19 @@
         <div class="contact-content">
             <p>I'm always interested in hearing about new projects and opportunities. Let's connect!</p>
             <div class="contact-info">
-              <p><a href="mailto:ankitpadhiyar018@zohomail.in">ankitpadhiyar018@zohomail.in</a></p>
-              <p><a href="tel:+919978876623">Call Me📞</a></p>  </div>
+              <!-- Contact box with clickable email and phone -->
+              <div class="contact-box" role="group" aria-label="Contact information">
+                <a class="contact-item" href="mailto:ankitpadhiyar018@zohomail.in" aria-label="Send email to ankitpadhiyar018">
+                  <span class="label">Email</span>
+                  <span class="value">ankitpadhiyar018@zohomail.in</span>
+                </a>
+
+                <a class="contact-item" href="tel:+919978876623" aria-label="Call Ankit">
+                  <span class="label">Phone</span>
+                  <span class="value">+91 99788 76623</span>
+                </a>
+              </div>
+            </div>
             
             <div class="social-links">
                 <a href="https://github.com/script_meo" target="_blank" class="social-link">
