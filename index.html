@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -407,54 +406,59 @@
             flex-wrap: wrap;
         }
 
+        /* make tech badges look like modern pill buttons */
         .tech-badge {
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
             font-size: 0.75rem;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            border: none;
+            outline: none;
+        }
+
+        .tech-badge:focus {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35), 0 0 0 4px rgba(0, 170, 255, 0.12);
         }
 
         .tech-badge.html-badge {
-            background: rgba(227, 76, 38, 0.2);
-            color: #e34c26;
-            border-color: #e34c26;
+            background: linear-gradient(90deg, #e44d26, #f97316);
+            color: #fff;
         }
 
         .tech-badge.html-badge:hover {
-            background: #e34c26;
-            color: white;
-            transform: scale(1.1);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(228,77,38,0.18);
         }
 
         .tech-badge.css-badge {
-            background: rgba(38, 77, 228, 0.2);
-            color: #264de4;
-            border-color: #264de4;
+            background: linear-gradient(90deg, #264de4, #06b6d4);
+            color: #fff;
         }
 
         .tech-badge.css-badge:hover {
-            background: #264de4;
-            color: white;
-            transform: scale(1.1);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(38,77,228,0.18);
         }
 
         .tech-badge.js-badge {
-            background: rgba(240, 219, 79, 0.2);
-            color: #f0db4f;
-            border-color: #f0db4f;
+            background: linear-gradient(90deg, #f0db4f, #ffb86b);
+            color: #1a1a2e;
         }
 
         .tech-badge.js-badge:hover {
-            background: #f0db4f;
-            color: #1a1a2e;
-            transform: scale(1.1);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(240,219,79,0.18);
         }
 
         .project-card:hover .tech-badge {
-            border-width: 2px;
+            /* subtle emphasis on hover */
+            transform: translateY(-2px);
         }
         .project-link {
             display: inline-block;
@@ -780,7 +784,7 @@
             <p class="subtitle">Software Developer</p>
             <div class="hero-about">
                 <p>
-                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
+                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through thoughtful, well-tested code.
                 </p>
                 <p>
                     My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I believe in writing clean, efficient, and maintainable code that makes a difference.
@@ -797,13 +801,13 @@
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
+                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life.
             </p>
             <p style="margin-top: 1.5rem;">
-                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and best practices in software development. I believe in writing clean, efficient, and maintainable code that makes a difference.
+                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and best practices.
             </p>
             <p style="margin-top: 1.5rem;">
-                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail. I'm always excited to take on new challenges and collaborate on interesting projects.
+                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail.
             </p>
         </div>
     </section>
@@ -848,9 +852,9 @@
                         <h3>Calculator App</h3>
                         <p>Functional calculator with sleek design and keyboard support.</p>
                         <div class="tech-badges">
-                            <a href="https://share.evernote.com/note/646e544f-6957-d9d9-2e84-c96a9fc0512f" target="_blank" rel="noopener noreferrer">HTML</a>
-                            <a href="https://share.evernote.com/note/83884a37-e536-f231-87c2-adddd0d51c98" target="_blank" rel="noopener noreferrer">CSS</a>
-                            <a href="https://share.evernote.com/note/b0104477-8882-815e-799d-f1133a6e0e2b" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
+                            <a class="tech-badge html-badge" href="https://share.evernote.com/note/646e544f-6957-d9d9-2e84-c96a9fc0512f" target="_blank" rel="noopener noreferrer">HTML</a>
+                            <a class="tech-badge css-badge" href="https://share.evernote.com/note/83884a37-e536-f231-87c2-adddd0d51c98" target="_blank" rel="noopener noreferrer">CSS</a>
+                            <a class="tech-badge js-badge" href="https://share.evernote.com/note/b0104477-8882-815e-799d-f1133a6e0e2b" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                             
                         </div>
                         <a href="#" class="project-link" onclick="openProject('calculator'); return false;">View Project →</a>
@@ -864,9 +868,9 @@
                         <p>Classic game with smooth animations and score tracking.</p>
                         <div class="tech-badges">
 
-                            <a href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">HTML</a>
-                            <a href="https://share.evernote.com/note/0a017734-a72d-e586-3449-4ba68e417cb4" target="_blank" rel="noopener noreferrer">CSS</a>
-                            <a href="https://share.evernote.com/note/2f87cc4c-9d81-58ef-d8fd-5cecdceed4bf" target="_blank" rel="noopener noreferrer">JAVASCRIPT </a>
+                            <a class="tech-badge html-badge" href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">HTML</a>
+                            <a class="tech-badge css-badge" href="https://share.evernote.com/note/0a017734-a72d-e586-3449-4ba68e417cb4" target="_blank" rel="noopener noreferrer">CSS</a>
+                            <a class="tech-badge js-badge" href="https://share.evernote.com/note/2f87cc4c-9d81-58ef-d8fd-5cecdceed4bf" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                           
                         </div>
                         <a href="#" class="project-link" onclick="openProject('tictactoe'); return false;">View Project →</a>
@@ -880,9 +884,9 @@
                         <p>Interactive game with AI and dynamic scoring system.</p>
                         <div class="tech-badges">
 
-                             <a href="https://share.evernote.com/note/402a905b-46a8-7bd4-eea8-1b9d07782149" target="_blank" rel="noopener noreferrer">HTML</a>
-                             <a href="https://share.evernote.com/note/5a66c655-f5ec-3af4-5e21-6831610a83c3" target="_blank" rel="noopener noreferrer">HTML</a>
-                             <a href="https://share.evernote.com/note/ba62a35d-73e8-fe58-fd23-5155b9f5e967" target="_blank" rel="noopener noreferrer">HTML</a>
+                             <a class="tech-badge html-badge" href="https://share.evernote.com/note/402a905b-46a8-7bd4-eea8-1b9d07782149" target="_blank" rel="noopener noreferrer">HTML</a>
+                             <a class="tech-badge css-badge" href="https://share.evernote.com/note/5a66c655-f5ec-3af4-5e21-6831610a83c3" target="_blank" rel="noopener noreferrer">CSS</a>
+                             <a class="tech-badge js-badge" href="https://share.evernote.com/note/ba62a35d-73e8-fe58-fd23-5155b9f5e967" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                         </div>
                         <a href="#" class="project-link" onclick="openProject('rps'); return false;">View Project →</a>
                     </div>
@@ -894,9 +898,9 @@
                         <h3>Notes Application</h3>
                         <p>Desktop note-taking app with search functionality.</p>
                         <div class="tech-badges">
-                             <a href="https://share.evernote.com/note/a26f3f70-3431-6c97-22d0-74393daf3e05" target="_blank" rel="noopener noreferrer">HTML</a>
-                             <a href="https://share.evernote.com/note/bd05ba15-3340-362f-9321-f97f6b02f50e" target="_blank" rel="noopener noreferrer">CSS</a>
-                             <a href="https://share.evernote.com/note/7b206343-ec8d-47df-be04-a23d96a69b9f" target="_blank" rel="noopener noreferrer">JAVASCRIPT </a>
+                             <a class="tech-badge html-badge" href="https://share.evernote.com/note/a26f3f70-3431-6c97-22d0-74393daf3e05" target="_blank" rel="noopener noreferrer">HTML</a>
+                             <a class="tech-badge css-badge" href="https://share.evernote.com/note/bd05ba15-3340-362f-9321-f97f6b02f50e" target="_blank" rel="noopener noreferrer">CSS</a>
+                             <a class="tech-badge js-badge" href="https://share.evernote.com/note/7b206343-ec8d-47df-be04-a23d96a69b9f" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                         </div>
                         <a href="#" class="project-link" onclick="openProject('notes'); return false;">View Project →</a>
                     </div>
@@ -908,9 +912,9 @@
                         <h3>Password Generator</h3>
                         <p>Generator with strength indicator and customization.</p>
                         <div class="tech-badges">
-                             <a href="https://share.evernote.com/note/673a0ca7-1c37-751c-4f7d-0a16062dadb3" target="_blank" rel="noopener noreferrer">HTML</a>
-                             <a href="https://share.evernote.com/note/66f6fee8-73fb-37df-9076-d305a2aaee50" target="_blank" rel="noopener noreferrer">CSS</a>
-                             <a href="https://share.evernote.com/note/e4efb076-aea5-4e75-044e-2ea47d4f505d" target="_blank" rel="noopener noreferrer">JAVASCRIPT </a>
+                             <a class="tech-badge html-badge" href="https://share.evernote.com/note/673a0ca7-1c37-751c-4f7d-0a16062dadb3" target="_blank" rel="noopener noreferrer">HTML</a>
+                             <a class="tech-badge css-badge" href="https://share.evernote.com/note/66f6fee8-73fb-37df-9076-d305a2aaee50" target="_blank" rel="noopener noreferrer">CSS</a>
+                             <a class="tech-badge js-badge" href="https://share.evernote.com/note/e4efb076-aea5-4e75-044e-2ea47d4f505d" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                         </div>
                         <a href="#" class="project-link" onclick="openProject('password'); return false;">View Project →</a>
                     </div>
@@ -922,9 +926,9 @@
                         <h3>Portfolio Website</h3>
                         <p>Modern responsive portfolio with smooth animations.</p>
                         <div class="tech-badges">
-                             <a href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">HTML</a>
-                             <a href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">CSS</a>
-                             <a href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">JAVASCRIPT </a>
+                             <a class="tech-badge html-badge" href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">HTML</a>
+                             <a class="tech-badge css-badge" href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">CSS</a>
+                             <a class="tech-badge js-badge" href="https://share.evernote.com/note/fbe80295-2f87-313c-626e-1be7ed8c8711" target="_blank" rel="noopener noreferrer">JAVASCRIPT</a>
                         </div>
                         <a href="https://armorx00.vercel.app" target="_blank" class="project-link">View Project →</a>
                     </div>
@@ -973,28 +977,63 @@
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                // keep normal behavior for external links
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
 
-        // Skill cards - open projects modal
+        // Modal handling
+        const modal = document.getElementById('projectsModal');
+        function openProjectsModal(lang) {
+            const title = document.getElementById('modalTitle');
+            title.textContent = lang ? `Projects — ${lang.toUpperCase()}` : 'My Projects';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Open a specific project (placeholder behavior: open portfolio or show alert)
+        function openProject(key) {
+            // Example behavior: if key matches known live URL open it, otherwise close modal
+            const liveMap = {
+                'portfolio': 'https://armorx00.vercel.app',
+                'calculator': '#',
+                'tictactoe': '#',
+                'rps': '#',
+                'notes': '#',
+                'password': '#'
+            };
+            if (liveMap[key] && liveMap[key] !== '#') {
+                window.open(liveMap[key], '_blank');
+            } else {
+                // fallback: just close modal for now
+                closeModal();
+                // you can replace this with a real route or modal detail view later
+            }
+        }
+
+        // Skill cards - open projects modal or GitHub search for C/Python
         const skillCards = document.querySelectorAll('.skill-card');
         skillCards.forEach(card => {
             card.addEventListener('click', () => {
                 const lang = card.getAttribute('data-lang');
-                
-                // Only show projects for HTML, CSS, and JavaScript
+
                 if (lang === 'html' || lang === 'css' || lang === 'javascript') {
                     openProjectsModal(lang);
-                } else {
-                    // For C and Python, open GitHub
+                } else if (lang === 'c' || lang === 'python') {
                     const urls = {
                         c: 'https://github.com/ankitpadhiyar?tab=repositories&q=c',
                         python: 'https://github.com/ankitpadhiyar?tab=repositories&q=python'
@@ -1004,104 +1043,28 @@
             });
         });
 
-        function openProjectsModal(lang) {
-            const modal = document.getElementById('projectsModal');
-            const title = document.getElementById('modalTitle');
-            
-            const langNames = {
-                html: 'HTML',
-                css: 'CSS',
-                javascript: 'JavaScript'
-            };
-            
-            title.textContent = `${langNames[lang]} Projects`;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('projectsModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
         });
 
-        // Close modal on background click
-        document.getElementById('projectsModal').addEventListener('click', (e) => {
-            if (e.target.id === 'projectsModal') {
-                closeModal();
-            }
-        });
-
-        // Open project links
-        function openProject(project) {
-            // Replace these with your actual project URLs
-            const projectUrls = {
-                calculator: 'https://github.com/ankitpadhiyar/calculator',
-                tictactoe: 'https://github.com/ankitpadhiyar/tic-tac-toe',
-                rps: 'https://github.com/ankitpadhiyar/rock-paper-scissors',
-                notes: 'https://github.com/ankitpadhiyar/notes-app',
-                password: 'https://github.com/ankitpadhiyar/password-generator'
-            };
-            window.open(projectUrls[project], '_blank');
-        }
-
-        // Tech badge links
-        function openTechLink(tech) {
-            const urls = {
-                html: 'https://github.com/ankitpadhiyar?tab=repositories&q=html',
-                css: 'https://github.com/ankitpadhiyar?tab=repositories&q=css',
-                js: 'https://github.com/ankitpadhiyar?tab=repositories&q=javascript'
-            };
-            window.open(urls[tech], '_blank');
-        }
-
-        // Create particles
-        function createParticles() {
+        // Simple particle background generator
+        (function createParticles(){
             const container = document.getElementById('particles');
-            const particleCount = 20;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.width = Math.random() * 5 + 2 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.animationDuration = Math.random() * 10 + 10 + 's';
-                container.appendChild(particle);
+            const count = Math.max(12, Math.floor(window.innerWidth / 80));
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 6 + 4;
+                p.style.width = `${size}px`;
+                p.style.height = `${size}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.bottom = `${-Math.random() * 50}px`;
+                p.style.opacity = String(0.2 + Math.random() * 0.6);
+                p.style.animationDuration = `${8 + Math.random() * 8}s`;
+                container.appendChild(p);
             }
-        }
-
-        createParticles();
-
-        // Active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.color = '';
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.style.color = '#00ffff';
-                }
-            });
-        });
+        })();
     </script>
 </body>
 </html>
