@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -548,18 +549,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Make contact paragraph display in a single line */
-        .contact-content p {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Ensure email text is white */
-        .contact-box .contact-text {
-            color: #ffffff;
-        }
-
         .call-button {
             background: rgba(34, 197, 94, 0.2);
             border: 2px solid rgba(34, 197, 94, 0.5);
@@ -791,7 +780,7 @@
             <p class="subtitle">Software Developer</p>
             <div class="hero-about">
                 <p>
-                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life throug[...]
+                    Hello! I'm a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
                 </p>
                 <p>
                     My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I believe in writing clean, efficient, and maintainable code that makes a difference.
@@ -808,13 +797,13 @@
         <h2>About Me</h2>
         <div class="about-content">
             <p>
-                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to[...]
+                Hello! I'm Ankit Padhiyar, a passionate software developer with expertise in multiple programming languages and technologies. I love building innovative solutions and bringing ideas to life through code.
             </p>
             <p style="margin-top: 1.5rem;">
-                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and bes[...]
+                My technical expertise spans across <strong>HTML, CSS, JavaScript, C, and Python</strong>. I'm constantly learning and evolving, staying up-to-date with the latest technologies and best practices in software development. I believe in writing clean, efficient, and maintainable code that makes a difference.
             </p>
             <p style="margin-top: 1.5rem;">
-                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail.[...]
+                Whether it's creating responsive web applications, developing algorithms in C, or building automation tools in Python, I approach every project with dedication and attention to detail. I'm always excited to take on new challenges and collaborate on interesting projects.
             </p>
         </div>
     </section>
@@ -1009,4 +998,110 @@
                     const urls = {
                         c: 'https://github.com/ankitpadhiyar?tab=repositories&q=c',
                         python: 'https://github.com/ankitpadhiyar?tab=repositories&q=python'
-[...]
+                    };
+                    window.open(urls[lang], '_blank');
+                }
+            });
+        });
+
+        function openProjectsModal(lang) {
+            const modal = document.getElementById('projectsModal');
+            const title = document.getElementById('modalTitle');
+            
+            const langNames = {
+                html: 'HTML',
+                css: 'CSS',
+                javascript: 'JavaScript'
+            };
+            
+            title.textContent = `${langNames[lang]} Projects`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectsModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Close modal on background click
+        document.getElementById('projectsModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectsModal') {
+                closeModal();
+            }
+        });
+
+        // Open project links
+        function openProject(project) {
+            // Replace these with your actual project URLs
+            const projectUrls = {
+                calculator: 'https://github.com/ankitpadhiyar/calculator',
+                tictactoe: 'https://github.com/ankitpadhiyar/tic-tac-toe',
+                rps: 'https://github.com/ankitpadhiyar/rock-paper-scissors',
+                notes: 'https://github.com/ankitpadhiyar/notes-app',
+                password: 'https://github.com/ankitpadhiyar/password-generator'
+            };
+            window.open(projectUrls[project], '_blank');
+        }
+
+        // Tech badge links
+        function openTechLink(tech) {
+            const urls = {
+                html: 'https://github.com/ankitpadhiyar?tab=repositories&q=html',
+                css: 'https://github.com/ankitpadhiyar?tab=repositories&q=css',
+                js: 'https://github.com/ankitpadhiyar?tab=repositories&q=javascript'
+            };
+            window.open(urls[tech], '_blank');
+        }
+
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = '#00ffff';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
